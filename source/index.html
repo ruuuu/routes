@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title class="title">100 маршрутов</title>
+    <link rel="icon" href="img/logo.png" type="image/png"><!-- для вставки иконки вов кладу браузера-->
+    <link href="css/futurastylesheet.css" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,800&display=swap&subset=cyrillic" rel="stylesheet">-->
+    <!--подключаем шрифты -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!--для кроссбраузерности -->
+    <link href="css/style.css" rel="stylesheet"><!-- наш файл-->
+ </head>
+
+ <body>
+   <div class="container header_my"> 
+       <ul class="nav">
+           <li>
+               <a class="nav-menu-item" href="">
+                   <img src="img/marshruty.svg" width="102" height="18" alt="Маршруты">
+               </a>
+           </li>
+           <li>
+               <a class="nav-menu-item" href="">
+                   <img src="img/uses.svg" width="128" height="15" alt="Пользователи">
+               </a>
+           </li>
+           <li>
+               <a class="nav-menu-item" href="">
+                   <img src="img/instructions.svg" width="110" height="18" alt="Интсрукции">
+
+               </a>
+           </li>
+           <li>
+               <a class="nav-menu-item" href="">
+                   <img src="img/dots.svg" width="52" height="14" alt="Точки">
+               </a>
+           </li>
+           <li>
+               <a class="nav-menu-item" href="">
+                   <img src="img/objects.svg" width="78" height="18" alt="Объекты">
+               </a>
+           </li>
+       </ul>
+       <div>
+           <button class="button logout_button" type="button">Выход</button>
+       </div>
+   </div>
+   
+   <main>
+      <div class="wrapper_for_block_after_head">
+          <div class="container for-filter-bar">
+              <div class="for-search-dropdowns">
+                  <!-- флекс контейнер-->
+                  <div class="search_wrapper">
+                      <!--флекс элнт, котр сам флекс контейнер -->
+                      <label>
+                          <input type="text" placeholder="Поиск по названию или номеру">
+                      </label>
+
+                  </div>
+                  <div class="for_dropdowns">
+                      <!--флекс элнт котр сам флекс контейнер -->
+                      <div class="select_wrapper">
+                          <!-- флекс эл-ент-->
+                          <div class="gl-relative">
+                              <button class="button for_button_in_dropdown">
+                                  Тип маршрута
+                              </button>
+                              <div class="wrapper">
+                                  <ul class="options-list">
+                                      <li>
+                                          <button class="option" type="button" title="Любой тип" role="option">Любой тип</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="Пеший" role="option">Пеший</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="Авто/Мото" role="option">Авто/Мото</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="Водный" role="option">Водный</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="Другой" role="option">Другой</button>
+                                      </li>
+
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="select_wrapper">
+                          <!-- флекс эл-ент-->
+                          <div class="gl-relative">
+                              <button class="button for_button_in_dropdown">
+                                  Статус
+                              </button>
+                              <div class="wrapper">
+                                  <ul class="options-list">
+                                      <li>
+                                          <button class="option" type="button" title="Любой статус" role="option">Любой статус</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="Опубликован" role="option">Опубликова</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="Не опубликован" role="option">Неопубликован</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="В архиве" role="option">В архиве</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="Другой" role="option">Другой</button>
+                                      </li>
+
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="select_wrapper">
+                          <!-- флекс эл-ент-->
+                          <div class="gl-relative">
+                              <button class="button for_button_in_dropdown">
+                                  Язык
+                              </button>
+                              <div class="wrapper">
+                                  <ul class="options-list">
+                                      <li>
+                                          <button class="option" type="button" title="Любой язык" role="option">Любой язык</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="Татар" role="option">Татар</button>
+                                      </li>
+                                      <li>
+                                          <button class="option" type="button" title="English" role="option">English</button>
+                                      </li>
+
+
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="wraperr_create_routes_button">
+                  <a href="" class="button create_routes_button" type="button">Создать маршрут</a>
+              </div>
+        </div>
+     </div>
+       
+     <div class="content">
+         <div class="container wrapper_for_table"><!--таблица-->
+             <div class="head_for_table_routes"><!-- шапка-->
+                 <div class="block_head" role="button"><!--фото -->
+                     <span>Номер</span>
+                     <div>
+                         <img src="img/arrow.svg" alt="">
+                     </div>
+                 </div>
+                 <div class="block_head"><!--Название -->
+                    <span>Фото</span>
+                    
+                 </div>
+                 <div class="block_head" role="button"><!-- Прошло-->
+                     <span>Название</span>
+                     <div>
+                         <img src="img/arrow.svg" alt="">
+                     </div>
+                 </div>
+                 <div class="block_head" role="button"><!-- Время-->
+                     <span>
+                          Прошло
+                     </span>
+                     <div>
+                         <img src="img/arrow.svg" alt="">
+                     </div>
+                 </div>
+                 <div class="block_head" role="button"><!-- Длина-->
+                     
+                     <span>Время</span>
+                     <div>
+                         <img src="img/arrow.svg" alt="">
+                     </div>
+                 </div>
+                 <div class="block_head" role="button"><!-- Языки-->
+                      <span>Длина</span>
+                      <div>
+                         <img src="img/arrow.svg" alt="">
+                     </div>
+                 </div>
+                 <div class="block_head"><!--Статус-->
+                     Языки
+                 </div>
+                 <div class="block_head"><!--Статус-->
+                     Статус
+                 </div>
+             </div>
+             <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            <a  class="row_of_table" href="">
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                      1
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    <img src="img/Rectangle%2024.svg" alt="">
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    Название маршрута длинное 
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     123
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                    45
+                 </div><!-- флекс ктнетйнер-->
+                 <div class="gl-table-cell">
+                    67
+                 </div>
+                 <div class="gl-table-cell"><!-- флекс ктнетйнер-->
+                     Инглиш Русский татасркий
+                 </div>
+                 <div class="gl-table-cell mod-align-right"><!-- флекс ктнетйнер-->
+                   <div class="last-element">
+                       <button class="statuses_button" type="button">
+                           Опубликован
+                       </button>
+                   </div>
+                 </div>
+             </a>
+            
+             
+         </div>
+         
+     </div> 
+     
+       
+         
+           
+             
+               
+                 
+                   
+                     
+                       
+                         
+                           
+                             
+                               
+                                 
+                                   
+                                     
+                                         
+   </main>
+   
+ </body>
+
+</html>
